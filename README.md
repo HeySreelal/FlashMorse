@@ -1,16 +1,15 @@
-# flashmorse
+# Flash Morse 🔦
 
-Simple Morse Code Flasher App
+Flash Morse is a simple app that allows you to flash your Morse code on your device.
 
-## Getting Started
+## Available Features: 
+- Convert Text To Morse
+- Flash the converted text
+- Clear & Copy
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Build this project for [@TinkerHub](https://github.com/tinkerhub)'s [Co-Coder program](http://tinkerhub.org/co-coder) - Flutter track. 🔥
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+<hr>
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Thank You ❤️
