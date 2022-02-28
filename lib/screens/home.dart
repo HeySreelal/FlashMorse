@@ -2,8 +2,7 @@ import 'package:flashmorse/utils/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:torch_light/torch_light.dart';
-
-import 'converter.dart';
+import '../utils/converter.dart';
 
 class FlashHome extends StatefulWidget {
   const FlashHome({Key? key}) : super(key: key);
