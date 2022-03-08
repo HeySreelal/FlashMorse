@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:torch_light/torch_light.dart';
 import '../utils/converter.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class FlashHome extends StatefulWidget {
   const FlashHome({Key? key}) : super(key: key);
@@ -15,11 +16,16 @@ class FlashHomeState extends State<FlashHome> {
   final TextEditingController _input = TextEditingController();
   final TextEditingController _output = TextEditingController();
   final FocusNode _inputFocus = FocusNode();
-
+  static AudioCache player = AudioCache(prefix: 'sounds/');
   bool _alreadyFlashing = false;
+  bool _alreadyBeeping = false;
 
   void _setFlashing(bool already) async {
     _alreadyFlashing = already;
+  }
+
+  void _setBeeping(bool already) async{
+    _alreadyBeeping = already;
   }
 
   @override
@@ -154,7 +160,9 @@ class FlashHomeState extends State<FlashHome> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
+      floatingActionButton: Column(
+        mainAxisAlignment:MainAxisAlignment.end,
+        children:[FloatingActionButton.extended(
         onPressed: () async {
           if (_output.text.trim().isEmpty) {
             showMsg("Type something to flash! 👀");
@@ -174,7 +182,23 @@ class FlashHomeState extends State<FlashHome> {
           _setFlashing(false);
         },
         label: const Text("Flash 🔦"),
-      ),
+        ),
+        const SizedBox(height: 20),
+        FloatingActionButton.extended(onPressed: () async{
+          if(_output.text.trim().isEmpty){
+            showMsg("Type something to beep 👀");
+            _inputFocus.requestFocus();
+            return;
+          }
+          if(_alreadyBeeping){
+            return showMsg("Already beeping! 🤔");
+          }
+          _setBeeping(true);
+          await XooniMorse.beepIt(_output.text.trim());
+          _setBeeping(false);
+        }, 
+        label: const Text("Beep 🔊"))],
+    )
     );
   }
 }

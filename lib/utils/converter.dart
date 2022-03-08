@@ -1,4 +1,5 @@
 import 'package:torch_light/torch_light.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class XooniMorse {
   static const morseCode = {
@@ -60,7 +61,7 @@ class XooniMorse {
     " ": "\t",
     "\n": "\n",
   };
-
+  static AudioCache player = AudioCache(prefix: 'sounds/');
   static String convert(String phrase) {
     String result = "";
     phrase.toUpperCase().split(" ").forEach((word) {
@@ -94,6 +95,21 @@ class XooniMorse {
         await Future.delayed(short);
       } else {
         await Future.delayed(long);
+      }
+    }
+  }
+
+  static Future<void> beepIt(String morse) async{
+    const duration = Duration(milliseconds: 500);
+    for (int i=0; i < morse.length ;i++){
+      if(morse[i]=="-"){
+        await player.play('beepLong.wav');
+        await Future.delayed(duration);
+      }else if(morse[i]=="."){
+        await player.play('beepShort.wav');
+        await Future.delayed(duration);
+      }else{
+        await Future.delayed(duration);
       }
     }
   }
