@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:torch_light/torch_light.dart';
 import '../utils/converter.dart';
-import 'package:audioplayers/audioplayers.dart';
 
 class FlashHome extends StatefulWidget {
   const FlashHome({Key? key}) : super(key: key);
@@ -16,7 +15,6 @@ class FlashHomeState extends State<FlashHome> {
   final TextEditingController _input = TextEditingController();
   final TextEditingController _output = TextEditingController();
   final FocusNode _inputFocus = FocusNode();
-  static AudioCache player = AudioCache(prefix: 'sounds/');
   bool _alreadyFlashing = false;
   bool _alreadyBeeping = false;
 
