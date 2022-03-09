@@ -10,17 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primaryColor: FlashColors.primary,
-        colorScheme: ColorScheme.light(
-          secondary: FlashColors.primary,
-        ),
-        appBarTheme: AppBarTheme(
-          backgroundColor: FlashColors.primary,
-          elevation: 0,
-          foregroundColor: Colors.black,
-        ),
-      ),
+      theme: FlashColors.theme,
       debugShowCheckedModeBanner: false,
       title: 'Flash Morse',
       home: const FlashSplash(),
