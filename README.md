@@ -16,6 +16,9 @@ Flash Morse is a simple app that allows you to flash your Morse code on your dev
 ## 🧑‍🤝‍🧑 Team ID
 **Flutter / 83**
 
+## Link to product walk-through
+[Video link](https://www.loom.com/share/23da8133873b4de393c0c74dc6403f31)
+
 ## 🤔 How it works?
 We've made the user experience flow as simple as possible. The user can enter a text in the given field and the text will automatically get converted to morse code as they type. User is given two buttons to both **Flash** 🔦 and **Beep** 🔉 the converted morse code.
 
@@ -40,6 +43,8 @@ Follow the steps to configure:
 3. Run `flutter run` to run the app.
 4. Or run `flutter build apk` to build the app.
 
+## APK release 📱
+[Download](https://github.com/HeySreelal/FlashMorse/releases/tag/v1.1.0)
 <hr>
 
 Build this project for [@TinkerHub](https://github.com/tinkerhub)'s [Co-Coder program](http://tinkerhub.org/co-coder) - Flutter track. 🔥
